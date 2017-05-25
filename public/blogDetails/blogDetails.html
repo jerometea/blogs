@@ -1,0 +1,53 @@
+<div ng-controller="blogDetails" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+
+            <h3 class="panel-title">{{ blog.author.username }}</h3>
+
+        </div>
+
+        <div class="panel-body">{{blog.text}}</div>
+
+
+        <div class="panel-footer" >
+
+            <span ng-if="blog.numberOfRatings"> {{average}} / 5 - {{blog.numberOfRatings}} votes</span>
+
+            <span ng-if="!blog.numberOfRatings" class="panel-footer"> 0 vote </span>
+
+            <form ng-show="!didRate" ng-submit="rate()" style="display:inline-block; float:right;">
+                <label for="singleSelect"> Note: </label>
+                <select name="singleSelect"  ng-init="ratingValue = 5" ng-model="ratingValue">
+                 <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+            </select>
+                <input type="submit"  value="voter" class="btn btn-success btn-sm"/>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <form ng-submit="addComment()">
+        <h2>{{ username }}</h2>
+        <div class="form-group">
+            <textarea rows="5" class="form-control" ng-model="commentary"></textarea>
+        </div>
+        <input type="submit" class="btn btn-success btn-sm" value="Commenter">
+    </form>
+
+    <div class="media" ng-repeat="comment in comments | orderBy:'-createdAt' ">
+        <div class="media-body">
+            <h4>{{comment.author.username}} :</h4>
+            <p>{{comment.text}}</p>
+            <p>{{comment.createdAt | date:'dd/MM' }} à {{ comment.createdAt | date:'HH:mm'}}</p>
+        </div>
+    </div>
+
+</div>

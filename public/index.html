@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <title>Blog</title>
+
+    <style>
+
+</style>
+</head>
+
+<body>
+
+    <nav ng-controller="navController" class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+            <li ng-class="{hidden : isConnected}"><a ui-sref="/">Accueil</a></li>
+            <li ng-class="{hidden : !isConnected}" ng-click="disconnect()"><a ui-sref="/">Deconnexion</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <ui-view></ui-view>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+    <script src="./main.js"></script>
+    <script src="./blogs/blogs.js"></script>
+    <script src="./home/home.js"></script>
+    <script src="./nav.js"></script>
+    <script src="./blogDetails/blogDetails.js"></script>
+    <script src="./factory/pagination.js"></script>
+
+</body>
+
+
+
+</html>
