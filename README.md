@@ -1,5 +1,5 @@
 # Blogs
-Simple blog exercice created with the MEAN stack during my intership
+Simple blog exercice created with the MEAN ( Angular 1 ) stack during my intership
 
 Try the app on : https://rocky-citadel-46525.herokuapp.com/blogs
 
