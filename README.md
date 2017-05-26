@@ -3,7 +3,7 @@ Simple blog exercice with MEAN stack created during my intership
 
 Try the app on : https://rocky-citadel-46525.herokuapp.com/blogs
 
-Pusblish, edit, remove, rate and search blogs
+Pusblish, edit, remove, comment, rate and search blogs
 
 How to install :
 1. download the repo
