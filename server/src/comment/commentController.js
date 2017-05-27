@@ -5,7 +5,7 @@ const User = require('../user/userModel')
 module.exports = {
     // Add Comment
     add: (req, res, next) => {
-        
+
         let comment = new Comment({
             blog: req.body.blogId,
             author: req.user._id,
@@ -16,24 +16,22 @@ module.exports = {
             if (err) next({ status: 400, message: err.message })
             else {
                 // Promise Add Comment To Blog
-                let blogPromise = new Promise((resolve, reject) => {
-                    Blog.findOne({ _id: req.body.blogId })
-                        .then(blog => {
-                            blog.comments.push(comment)
-                            resolve(blog.save())
-                        })
-                        .catch(err => next({ status: 400, message: err.message }))
-                })
+                var blogPromise = Blog.findOne({ _id: req.body.blogId })
+                    .then(blog => {
+                        blog.comments.push(comment)
+                        return blog.save()
+                    })
+                    .catch(err => next({ status: 400, message: err.message }))
+
                 // Promise Add Comment To User
-                let userPromise = new Promise((resolve, reject) => {
-                    User.findOne({ _id: req.user._id })
-                        .select('+comments')
-                        .then(user => {
-                            user.comments.push(comment)
-                            resolve(user.save())
-                        })
-                        .catch(err => next({ status: 400, message: err.message }))
-                })
+                var userPromise = User.findOne({ _id: req.user._id })
+                    .select('+comments')
+                    .then(user => {
+                        user.comments.push(comment)
+                        return user.save()
+                    })
+                    .catch(err => next({ status: 400, message: err.message }))
+
                 // Promise.All
                 Promise.all([blogPromise, userPromise])
                     .then(() => res.status(200).json(comment))
