@@ -10,3 +10,20 @@ How to install :
 2. open a command prompt at the root of the repo
 3. type node app.js
 4. go to http://localhost:3000/
+
+Directory strucure :
+```
+├───public
+│   ├───blogDetails
+│   ├───blogs
+│   ├───factory
+│   └───home
+└───server       
+    ├───config
+    ├───middleware
+    └───src <------- features
+        ├───blog
+        ├───comment
+        ├───rating
+        └───user
+```
