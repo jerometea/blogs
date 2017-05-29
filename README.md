@@ -14,13 +14,7 @@ Pusblish, edit, remove, comment, rate and search blogs
 # Comment and rate others blogs
 ![alt text](https://img15.hostingpics.net/pics/671135commentaire.png)
 
-How to install :
-1. download the repo
-2. open a command prompt at the root of the repo
-3. type node app.js
-4. go to http://localhost:3000/
-
-Directory strucure :
+# Directory strucure :
 ```
 ├───public
 │   ├───blogDetails
@@ -36,3 +30,8 @@ Directory strucure :
         ├───rating
         └───user
 ```
+# How to install :
+1. download the repo
+2. open a command prompt at the root of the repo
+3. type node app.js
+4. go to http://localhost:3000/
