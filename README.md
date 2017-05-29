@@ -5,6 +5,15 @@ Try the app on : https://blog-jerome.herokuapp.com/blogs
 
 Pusblish, edit, remove, comment, rate and search blogs
 
+# Register and connect
+![alt text](https://img15.hostingpics.net/pics/596268inscription.png)
+
+# Publish your text
+![alt text](https://img15.hostingpics.net/pics/642551publication.png)
+
+# Comment and rate others blogs
+![alt text](https://img15.hostingpics.net/pics/671135commentaire.png)
+
 How to install :
 1. download the repo
 2. open a command prompt at the root of the repo
